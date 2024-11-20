@@ -28,56 +28,63 @@ Rust\RustClient_Data\il2cpp_data\Metadata\global-metadata.dat
 
 
 
-## Updating Static Classes
-*This Needs To Be Updated Each Time The Game Updates* <br>
-Open `script.json` Generated from Il2CPP Dumper. <br>
-Look into the RustDMA/SDK Folder For A Header That Has An Address, Name, Signature.<br>
-I Will Be Using TODSky.h As An Example. <br>
-
-```
-	/*
-	"Address": 54329896,
-      "Name": "TOD_Sky_TypeInfo",
-      "Signature": "TOD_Sky_c*"
-	*/
-```
-
-Now Search For The Signature In `Script.json`(open in notepad and control + f). This Signature Will Be `TOD_Sky_c*` <br>
-
+## Updating Class Address
+Search OcclusionCulling within the DNSpy modules:
 <p align="Left">
-  <img src="https://github.com/IntelSDM/RustDmaCheat/assets/86087830/6c3ab642-7117-488a-b2d9-12534454bf4f"
-    style="width: 50%;" />
+  <img src="https://github.com/user-attachments/assets/1488845d-bf33-4b3e-af8e-bf6642cc9dbd"
+    style="width: 75%;" />
 </p>
 
-Copy The Address From `Script.json`. For Me It Will Be `"Address": 54842648,`<br>
-Open Calculator And Set It To Programmer Mode <br>
+Copy the class name after the % so in this example: d442c5cae6a89c0c967516c999e495f284ac087e
 <p align="Left">
-  <img src="https://github.com/IntelSDM/RustDmaCheat/assets/86087830/b6d17bfe-b0e9-4828-88fd-b5d8f3bc5483"
-    style="width: 50%;" />
-</p>
-Make Sure You Are Selected In Decimal
-<p align="Left">
-  <img src="https://github.com/IntelSDM/RustDmaCheat/assets/86087830/42684cfc-0312-462f-a317-0e522e900729"
-    style="width: 50%;" />
-</p>
-Input The Address And Then Select Hex
-<p align="Left">
-  <img src="https://github.com/IntelSDM/RustDmaCheat/assets/86087830/02ed1634-b461-4f13-80ac-99d6c66adab1"
-    style="width: 50%;" />
+  <img src="https://github.com/user-attachments/assets/e611ebd5-b6c1-4a31-a354-71cc60da68b6"
+    style="width: 75%;" />
 </p>
 
-The New Address Is `0x344D518`
-
-## Updating Offsets
-*These Only Need To Be Updated Every When The Game Adds Something To The Class* <br>
-Drag The `Assembly-CSharp.dll` From `il2cpp dumper\DummyDll`
-I Will Use `TODSky.h` As An Example. <br>
-The Game Class Is `TOD_Sky` <br>
-To Update The NightParamaters You Search For `public TOD_NightParameters Night`<br>
+Open script.json in your il2cpp dumper folder and search for that class name you copied + _c* on the end so in this example: d442c5cae6a89c0c967516c999e495f284ac087e_c*
 <p align="Left">
-  <img src="https://github.com/IntelSDM/RustDmaCheat/assets/86087830/4ad91c33-a117-4922-b6cc-2648ee48ffe5"
-    style="width: 50%;" />
+  <img src="https://github.com/user-attachments/assets/5ac8158e-0261-461e-b7da-1a11bc36dcca"
+    style="width: 75%;" />
 </p>
-Revealing The Offset Is 0x58 
+Copy the address into the oclussioncullingclass field
+<p align="Left">
+  <img src="https://github.com/user-attachments/assets/07bf09a7-fc16-48c9-8299-059e5a63f8d4"
+    style="width: 75%;" />
+</p>
 
+## Updating instance
+Search within the OcclusionCulling class for : "public static OcclusionCulling "(WITH THE SPACE AT THE END)
+<p align="Left">
+  <img src="https://github.com/user-attachments/assets/97881224-92b9-4c2d-aa96-4284a901c113"
+    style="width: 75%;" />
+</p>
+There will be multiple, search for them 1 by one. Then compare them in reclass.
+<br>
+To find the address to scan in reclass, it is the one printed after "StaticClass: "
+<p align="Left">
+  <img src="https://github.com/user-attachments/assets/7a2185bb-d6fc-42fe-8ab0-22b338bd92f7"
+    style="width: 75%;" />
+</p>
+Compare each one you find in DNSpy to Reclass, if it isn't 0x0 then its the one you want.
+<p align="Left">
+  <img src="https://github.com/user-attachments/assets/b53c3d30-88cf-416d-9fcb-d6c6803837f2"
+    style="width: 85%;" />
+</p>
+Then once you find the correct offset that isn't pointing to 0x0 then paste it in "instance".
+<p align="Left">
+  <img src="https://github.com/user-attachments/assets/f67d2cb8-019c-4c26-a346-5ce0b7da2708"
+    style="width: 75%;" />
+</p>
 
+## Updating debugsettings
+In DNSpy within the occlusionculling class search for OcclusionCulling.DebugSettings
+<p align="Left">
+  <img src="https://github.com/user-attachments/assets/3658d4f7-6e20-487c-b557-40d6c51f32ff"
+    style="width: 75%;" />
+</p>
+Copy the offset into the "debugsettings" in the cheat
+
+<p align="Left">
+  <img src="https://github.com/user-attachments/assets/9e3a5791-5726-4c4a-8462-3f39adfdd15e"
+    style="width: 75%;" />
+</p>
