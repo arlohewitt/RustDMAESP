@@ -25,7 +25,7 @@ void main()
 	uint64_t klass = TargetProcess.Read<uint64_t>(TargetProcess.GetBaseAddress("GameAssembly.dll") + occlusioncullingclass);
 	uint64_t staticclass = TargetProcess.Read<uint64_t>(klass + 0xb8);
 	printf("StaticClass: %llx\n", staticclass);
-	Sleep(5000);
+	//Sleep(5000);
 	uint64_t instance = TargetProcess.Read<uint64_t>(staticclass + 0x4D8);
 	uint64_t debugsettings = TargetProcess.Read<uint64_t>(instance + 0x1A8);
 
