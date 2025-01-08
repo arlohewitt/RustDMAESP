@@ -2,7 +2,7 @@
 [Simple Video Guide](https://youtu.be/kCqW_dBe5qo)
 
 ## Tools
-[IL2CPP Dumper](https://github.com/Perfare/Il2CppDumper/releases/download/v6.7.40/Il2CppDumper-net7-win-v6.7.40.zip)<br>
+[IL2CPP Dumper](https://github.com/Perfare/Il2CppDumper/releases/download/v6.7.46/Il2CppDumper-net7-win-v6.7.46.zip)<br>
 [dnSpy](https://github.com/dnSpy/dnSpy/releases/download/v6.1.8/dnSpy-net-win64.zip)
 
 ## IL2CPP Dumping
